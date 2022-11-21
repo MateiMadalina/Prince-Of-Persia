@@ -1,4 +1,17 @@
+//Ex 1
 
+function getStairsMovementDirection(){
+
+}
+
+
+function getZigZagMovementDirection(){
+
+}
+
+function manuallyControl(){
+  
+}
 
 // DON'T MODIFY THE CODE BELOW THIS LINE
 
