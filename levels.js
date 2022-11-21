@@ -1,16 +1,24 @@
 //Ex 1
 
 function getStairsMovementDirection(stairNumber, isClimbingStairs ){
-  // for (let i=0; i<7; i++){
 
-  //   moveDirection("down")-1
-  //   moveDirection("right") -1
-  //   moveDirection("down")+1
-  //   moveDirection("right") +1
-  //  }
+ if(stairNumber % 2 === 0 && isClimbingStairs === false){
+  return "down";
+ }
+ if(stairNumber % 2 !== 0 && isClimbingStairs === false){
+  return "right";
+ }
+ if(stairNumber % 2 === 0 && isClimbingStairs === true){
+  return "up";
+ }
+ if(stairNumber % 2 !== 0 && isClimbingStairs === true){
+  return "right";
+ }
 
-  moveDirection("down")
-}
+ }
+
+
+
 
 function getZigZagMovementDirection(){
 
