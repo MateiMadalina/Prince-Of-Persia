@@ -1,16 +1,75 @@
 //Ex 1
 
-function getStairsMovementDirection(){
+function getStairsMovementDirection(stairNumber, isClimbingStairs ){
+  // for (let i=0; i<7; i++){
 
+  //   moveDirection("down")-1
+  //   moveDirection("right") -1
+  //   moveDirection("down")+1
+  //   moveDirection("right") +1
+  //  }
+
+  moveDirection("down")
 }
-
 
 function getZigZagMovementDirection(){
 
 }
 
 function manuallyControl(){
-  
+
+}
+
+function givePotion2Answer(){
+
+}
+
+function givePotion3Answer(){
+
+}
+
+function givePotion4Answer(){
+
+}
+
+function givePotion5Answer(){
+
+}
+
+function givePotion6Answer(){
+
+}
+
+function givePotion7Answer(){
+
+}
+
+function givePotion8Answer(){
+
+}
+
+function givePotion9Answer(){
+
+}
+
+function givePotion10Answer(){
+
+}
+
+function givePotion11Answer(){
+
+}
+
+function givePotion12Answer(){
+
+}
+
+function level7Move(){
+
+}
+
+function level8Move(){
+
 }
 
 // DON'T MODIFY THE CODE BELOW THIS LINE
