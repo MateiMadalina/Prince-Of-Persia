@@ -15,13 +15,20 @@ function getStairsMovementDirection(stairNumber, isClimbingStairs ){
   return "right";
  }
 
- }
+}
 
+//Ex2
 
-
-
-function getZigZagMovementDirection(){
-
+function getZigZagMovementDirection(step){
+if(step === 0 || step === 6){
+ return "up";
+}
+else if(step === 3 || step === 9){
+return "down"
+}
+else{
+  return "right"
+}
 }
 
 function manuallyControl(){
