@@ -31,6 +31,8 @@ else{
 }
 }
 
+//Ex 3
+ 
 function manuallyControl(){
   var x = event.key;
   if (x == "a") {
@@ -59,12 +61,25 @@ function manuallyControl(){
   }
 }
 
-function givePotion2Answer(){
-
+//Ex4
+function givePotion2Answer(list){
+ let sum = 0;
+ for(let i = 0; i<list.length; i++){
+  if(list[i] % 2 === 0){
+  sum = sum + list[i];
+  }
+ }
+ return sum;
 }
 
-function givePotion3Answer(){
-
+function givePotion3Answer(list){
+ let first = list[0]
+ for( let i = 0; i<list.length; i++){
+  if(first <= list[i]){
+    first = list[i];
+  }
+ }
+ return first;
 }
 
 function givePotion4Answer(){
@@ -75,8 +90,15 @@ function givePotion5Answer(){
 
 }
 
-function givePotion6Answer(){
+function givePotion6Answer(input){
+let sum = 0;
+for(let i = 0; i<input.length; i++){
+  if( i % 2 !== 0){
+  sum += input[i];
+  }
+}
 
+return sum;
 }
 
 function givePotion7Answer(){
