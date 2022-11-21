@@ -32,7 +32,31 @@ else{
 }
 
 function manuallyControl(){
-
+  var x = event.key;
+  if (x == "a") {
+    moveDirection("left");
+  }
+  if (x == "w") {
+    moveDirection("up");
+  }
+  if (x == "d") {
+    moveDirection("right");
+  }
+  if (x == "s") {
+    moveDirection("down");
+  }
+  if (x == "ArrowUp") {
+    moveDirection("up");
+  }
+  if (x == "ArrowDown") {
+    moveDirection("down");
+  }
+  if (x == "ArrowRight") {
+    moveDirection("right");
+  }
+  if (x == "ArrowLeft") {
+    moveDirection("left");
+  }
 }
 
 function givePotion2Answer(){
