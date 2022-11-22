@@ -85,8 +85,10 @@ function givePotion3Answer(list){
  return first;
 }
 
-function givePotion4Answer(){
-
+function givePotion4Answer(input, toCapitalize){
+for (i = 0; i< input.length; i++){
+  let myArr = input.split("");
+}
 }
 
 function givePotion5Answer(hours,minutes,seconds,secondsToAdd){
@@ -141,12 +143,19 @@ function givePotion8Answer(number){
 return boolean;
 }
 
-function givePotion9Answer(){
-
+function givePotion9Answer(list) {
+  let smallest = list.sort((a, b) => a - b).slice(0, 2)
+  let sum = 0;
+  for (let i = 0; i < smallest.length; i++) {
+    if (parseInt(smallest[i])) {
+      sum += parseInt(smallest[i]);
+    }
+  }
+  return sum;
 }
 
 
-  const givePotion10Answer = (letterToFind, input) => {
+function givePotion10Answer(letterToFind, input){
     let myArr = input.split("");
     let k = [];
     let j = 0
