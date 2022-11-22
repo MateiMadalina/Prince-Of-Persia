@@ -34,32 +34,35 @@ else{
 //Ex 3
  
 function manuallyControl(){
-  var x = event.key;
-  if (x == "a") {
-    moveDirection("left");
-  }
-  if (x == "w") {
-    moveDirection("up");
-  }
-  if (x == "d") {
-    moveDirection("right");
-  }
-  if (x == "s") {
-    moveDirection("down");
-  }
-  if (x == "ArrowUp") {
-    moveDirection("up");
-  }
-  if (x == "ArrowDown") {
-    moveDirection("down");
-  }
-  if (x == "ArrowRight") {
-    moveDirection("right");
-  }
-  if (x == "ArrowLeft") {
-    moveDirection("left");
-  }
+  var x = event.key;   
+      if (x == "a") {
+        moveDirection("left");
+      }
+      if (x == "w") {
+        moveDirection("up");
+      }
+      if (x == "d") {
+        moveDirection("right");
+      }
+      if (x == "s") {
+        moveDirection("down");
+      }
+     if (x == "ArrowUp") {
+        moveDirection("up");
+      }
+      if (x == "ArrowDown") {
+        moveDirection("down");
+      }
+      if (x == "ArrowRight") {
+        moveDirection("right");
+      }
+      if (x == "ArrowLeft") {
+        moveDirection("left");
+      }
+    
 }
+
+
 
 //Ex4
 function givePotion2Answer(list){
@@ -86,18 +89,30 @@ function givePotion4Answer(){
 
 }
 
-function givePotion5Answer(){
+function givePotion5Answer(hours,minutes,seconds,secondsToAdd){
+let a = seconds + secondsToAdd;
+if (a >= 60){
+  minutes +=1;
+  seconds = (seconds + secondsToAdd) - 60;
+  if (minutes >=60){
+    hours +=1;
+  minutes = minutes -60;
 
+  }
+}
+let time = [hours,minutes,seconds];
+return time.join(":");
+//console.log(hours + ":" + )
 }
 
 function givePotion6Answer(input){
 let sum = 0;
-for(let i = 0; i<input.length; i++){
-  if( i % 2 !== 0){
-  sum += input[i];
-  }
-}
+ for(let i = 0; i<input.length; i++){
+   if( parseInt(input[i])){
+   sum += parseInt(input[i]);
+ }
 
+}
 return sum;
 }
 
@@ -113,8 +128,16 @@ function givePotion9Answer(){
 
 }
 
-function givePotion10Answer(){
-
+function givePotion10Answer(letterToFind, input){
+  for (let position = 0; position < input.length; position++) 
+  {
+    if (input[position].includes(letterToFind)){
+    return letterToFind[position];
+    }
+    else { 
+      return -1;
+      }
+   }
 }
 
 function givePotion11Answer(){
