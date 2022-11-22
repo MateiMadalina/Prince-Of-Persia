@@ -116,12 +116,29 @@ let sum = 0;
 return sum;
 }
 
-function givePotion7Answer(){
+function givePotion7Answer(input){
+  let sum = 0;
+ for(let i = 0; i<input.length; i++){
+   if( parseInt(input[i])){
+   sum += parseInt(input[i]);
+ }
+
+}
+return sum;
 
 }
 
-function givePotion8Answer(){
-
+function givePotion8Answer(number){
+  let boolean = true;
+  if(number > 1){
+    for( let i = 2; i< number; i++){
+      if(number % i == 0){
+        boolean = false;
+        break;
+      }
+    }
+  }
+return boolean;
 }
 
 function givePotion9Answer(){
@@ -131,22 +148,36 @@ function givePotion9Answer(){
 function givePotion10Answer(letterToFind, input){
   for (let position = 0; position < input.length; position++) 
   {
-    if (input[position].includes(letterToFind)){
-    return letterToFind[position];
+    if (input[position].hasOwnProperty(letterToFind)){
+     if( letterToFind in input){
+    return [position];
     }
     else { 
       return -1;
       }
    }
 }
+}
 
 function givePotion11Answer(){
 
-}
-
-function givePotion12Answer(){
 
 }
+
+
+function givePotion12Answer(number){
+  let sum = 0;
+
+
+for( let i = 0; i<number.length;i++){
+  if(number[i] < 0){
+    number[i] = -number[i];
+  } 
+  sum += number[i];
+}  
+return sum;
+}
+
 
 function level7Move(){
 
