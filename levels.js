@@ -145,19 +145,21 @@ function givePotion9Answer(){
 
 }
 
-function givePotion10Answer(letterToFind, input){
-  for (let position = 0; position < input.length; position++) 
-  {
-    if (input[position].hasOwnProperty(letterToFind)){
-     if( letterToFind in input){
-    return [position];
-    }
-    else { 
-      return -1;
+
+  const givePotion10Answer = (letterToFind, input) => {
+    let myArr = input.split("");
+    let k = [];
+    let j = 0
+    for (let i = 0; i < myArr.length; i++) {
+      if (myArr[i] === letterToFind) {
+        k[j] = i + 1;
+        j++;
       }
-   }
-}
-}
+    }
+    if (k[0] > 0) {
+      return k[0] - 1
+    } else return -1
+  }
 
 function givePotion11Answer(){
 
