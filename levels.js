@@ -171,7 +171,7 @@ function givePotion10Answer(letterToFind, input){
   }
 
 function givePotion11Answer(){
-
+console.log("")
 
 }
 
