@@ -97,7 +97,7 @@ function givePotion4Answer(input, toCapitalize){
   }
  }
 }
-return array;
+return input;
 }
 
 
