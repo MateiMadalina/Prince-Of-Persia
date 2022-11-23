@@ -65,6 +65,7 @@ function manuallyControl(){
 
 
 //Ex4
+
 function givePotion2Answer(list){
  let sum = 0;
  for(let i = 0; i<list.length; i++){
@@ -74,6 +75,7 @@ function givePotion2Answer(list){
  }
  return sum;
 }
+
 
 function givePotion3Answer(list){
  let first = list[0]
@@ -85,11 +87,19 @@ function givePotion3Answer(list){
  return first;
 }
 
+
 function givePotion4Answer(input, toCapitalize){
-for (i = 0; i< input.length; i++){
-  let myArr = input.split("");
+ for (let i = 0; i< input.length; i++){
+  for(let j = 0; j<toCapitalize.length;j++){
+  if(input[i] === toCapitalize[j])
+  {
+     input[i].toUpperCase();
+  }
+ }
 }
+return array;
 }
+
 
 function givePotion5Answer(hours,minutes,seconds,secondsToAdd){
 let a = seconds + secondsToAdd;
@@ -99,13 +109,12 @@ if (a >= 60){
   if (minutes >=60){
     hours +=1;
   minutes = minutes -60;
-
-  }
+   }
 }
 let time = [hours,minutes,seconds];
 return time.join(":");
-//console.log(hours + ":" + )
 }
+
 
 function givePotion6Answer(input){
 let sum = 0;
@@ -113,22 +122,21 @@ let sum = 0;
    if( parseInt(input[i])){
    sum += parseInt(input[i]);
  }
-
-}
+ }
 return sum;
 }
+
 
 function givePotion7Answer(input){
   let sum = 0;
  for(let i = 0; i<input.length; i++){
    if( parseInt(input[i])){
    sum += parseInt(input[i]);
- }
-
+    }
 }
 return sum;
-
 }
+
 
 function givePotion8Answer(number){
   let boolean = true;
@@ -142,6 +150,7 @@ function givePotion8Answer(number){
   }
 return boolean;
 }
+
 
 function givePotion9Answer(list) {
   let smallest = list.sort((a, b) => a - b).slice(0, 2)
@@ -170,16 +179,20 @@ function givePotion10Answer(letterToFind, input){
     } else return -1
   }
 
-function givePotion11Answer(){
-console.log("")
 
+function givePotion11Answer(input, letterToReplace, letterToPutInstead){
+let array = input.split("");
+for( let i = 0; i < array.length; i++){
+  if(array[i] === letterToReplace){
+   array[i] = letterToPutInstead;
+  }
+}
+return array.join("")
 }
 
 
 function givePotion12Answer(number){
   let sum = 0;
-
-
 for( let i = 0; i<number.length;i++){
   if(number[i] < 0){
     number[i] = -number[i];
