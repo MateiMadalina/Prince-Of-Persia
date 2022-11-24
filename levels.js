@@ -107,23 +107,15 @@ function givePotion3Answer(list){
 
 
 function givePotion4Answer(input, toCapitalize){
-input;
-toCapitalize;
-let string = input.split("");
-let rez = [];
- for (let i = 0; i< string.length; i++){
-  for(let j = 0; j<string[i].length;j++){
-  if(string[i] === toCapitalize[j])
-  {
-    rez.push(string[i].toUpperCase());
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < toCapitalize.length; j++) {
+      if (input[i] === toCapitalize[j]){
+        input = input.split(input[i]).join(toCapitalize[j].toUpperCase());
+        //input = input.replace(input[i], toCapitalize[j].toUpperCase());
+      }
+    }
   }
-  else{
-    rez.push(string[i]);
-  }
- }
-}
-return rez.join("");
-
+  return input;
 }
 
 
@@ -262,7 +254,7 @@ for ( let i = 0; i < buffer.length ; i++){
     return true;
   }
 }
-return false;
+//return false;
 }
 
 function level7Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince,simpleMovment = false){
@@ -271,11 +263,12 @@ if((elementLeftOfPrince === 11 || elementLeftOfPrince === 99) && !hasMovedToTile
 position[0] -=1;
 buffer.push([position[0],position[1]]);
 
-//if(simpleMovment === false){
-//return movment("left");
-//else
-//return "left"
-//}
+// if(simpleMovment === false){
+// return movment("left");}
+// else{
+// return "left"
+// }
+
 return simpleMovment ? "left" : move("left");
 }
 if((elementRightOfPrince === 11 || elementRightOfPrince === 99) && !hasMovedToTile('right', position)){
