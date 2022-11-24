@@ -33,34 +33,52 @@ else{
 
 //Ex 3
  
-function manuallyControl(){
-  var x = event.key;   
-      if (x == "a") {
-        moveDirection("left");
-      }
-      if (x == "w") {
-        moveDirection("up");
-      }
-      if (x == "d") {
+let keyPressed = false;
+function manuallyControl(keyDown) {
+  if (keyPressed === false) {
+    switch (keyDown) {
+      case "ArrowRight":
         moveDirection("right");
-      }
-      if (x == "s") {
-        moveDirection("down");
-      }
-     if (x == "ArrowUp") {
-        moveDirection("up");
-      }
-      if (x == "ArrowDown") {
-        moveDirection("down");
-      }
-      if (x == "ArrowRight") {
-        moveDirection("right");
-      }
-      if (x == "ArrowLeft") {
+        break;
+
+      case "ArrowLeft":
         moveDirection("left");
-      }
-    
-}
+        break;
+
+      case "ArrowUp":
+        moveDirection("up");
+        break;
+
+      case "ArrowDown":
+        moveDirection("down");
+        break;
+      
+      case "KeyQ":
+        keyPressed = true;
+    };
+  } else {
+    switch (keyDown) {
+      case "KeyD":
+        moveDirection("right");
+        break;
+      
+      case "KeyA":
+        moveDirection("left");
+        break;
+
+      case "KeyW":
+        moveDirection("up");
+        break;
+
+      case "KeyS":
+        moveDirection("down");
+        break;
+      
+      case "KeyQ":
+        keyPressed = false;
+    };
+  };
+}; 
 
 
 
@@ -89,15 +107,23 @@ function givePotion3Answer(list){
 
 
 function givePotion4Answer(input, toCapitalize){
- for (let i = 0; i< input.length; i++){
-  for(let j = 0; j<toCapitalize.length;j++){
-  if(input[i] === toCapitalize[j])
+input;
+toCapitalize;
+let string = input.split("");
+let rez = [];
+ for (let i = 0; i< string.length; i++){
+  for(let j = 0; j<string[i].length;j++){
+  if(string[i] === toCapitalize[j])
   {
-     input[i].toUpperCase();
+    rez.push(string[i].toUpperCase());
+  }
+  else{
+    rez.push(string[i]);
   }
  }
 }
-return input;
+return rez.join("");
+
 }
 
 
@@ -203,12 +229,79 @@ return sum;
 }
 
 
-function level7Move(){
 
+//Level 7
+
+
+             //[x, y] => position[0]=x si position[1]=y
+let position = [0, 0];
+let buffer = [[0,0]]; // Sir de memorare pozitii dupa miscarea initiala din lvl, cele din if
+
+function move( string){
+  return moveDirection(string);
 }
 
-function level8Move(){
 
+function hasMovedToTile(direction, tileToCheck) {
+let testTile = []; //[x,y]
+if( direction === "right"){
+  testTile = [tileToCheck[0]+1,tileToCheck[1]];// pt dreapta x + 1 ---> y nu se modif.
+}
+else if( direction === "left"){
+  testTile = [tileToCheck[0]-1,tileToCheck[1]];
+}
+else if(direction === "up"){
+  testTile = [tileToCheck[0], tileToCheck[1]+1];
+}
+else if(direction === "down"){
+  testTile = [tileToCheck[0], tileToCheck[1]-1];
+}
+
+for ( let i = 0; i < buffer.length ; i++){
+  if(testTile[0] == buffer[i][0] && testTile[1] == buffer[i][1]){
+    return true;
+  }
+}
+return false;
+}
+
+function level7Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince,simpleMovment = false){
+
+if((elementLeftOfPrince === 11 || elementLeftOfPrince === 99) && !hasMovedToTile('left', position)){
+position[0] -=1;
+buffer.push([position[0],position[1]]);
+
+//if(simpleMovment === false){
+//return movment("left");
+//else
+//return "left"
+//}
+return simpleMovment ? "left" : move("left");
+}
+if((elementRightOfPrince === 11 || elementRightOfPrince === 99) && !hasMovedToTile('right', position)){
+position[0] += 1;
+buffer.push([position[0],position[1]]);
+return simpleMovment ? "right" : move("right");
+}
+if((elementUpOfPrince === 11 || elementUpOfPrince === 99) && !hasMovedToTile('up', position)){
+position[1] += 1;
+buffer.push([position[0],position[1]]);
+return simpleMovment ? "up" : move("up");
+}
+if((elementDownOfPrince === 11 || elementDownOfPrince === 99) && !hasMovedToTile('down', position)){
+position[1] -= 1;
+buffer.push([position[0],position[1]]);
+return simpleMovment ? "down" : move("down");
+}
+}
+
+
+
+
+//Level 8
+
+function level8Move(gameMap){
+  console.log(gameMap);
 }
 
 // DON'T MODIFY THE CODE BELOW THIS LINE
