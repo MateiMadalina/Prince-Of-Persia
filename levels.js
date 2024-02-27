@@ -1,5 +1,3 @@
-//Ex 1
-
 function getStairsMovementDirection(stairNumber, isClimbingStairs ){
 
  if(stairNumber % 2 === 0 && isClimbingStairs === false){
@@ -17,7 +15,6 @@ function getStairsMovementDirection(stairNumber, isClimbingStairs ){
 
 }
 
-//Ex2
 
 function getZigZagMovementDirection(step){
 if(step === 0 || step === 6){
@@ -31,7 +28,6 @@ else{
 }
 }
 
-//Ex 3
  
 let keyPressed = false;
 function manuallyControl(keyDown) {
@@ -81,9 +77,6 @@ function manuallyControl(keyDown) {
 }; 
 
 
-
-//Ex4
-
 function givePotion2Answer(list){
  let sum = 0;
  for(let i = 0; i<list.length; i++){
@@ -111,7 +104,6 @@ function givePotion4Answer(input, toCapitalize){
     for (let j = 0; j < toCapitalize.length; j++) {
       if (input[i] === toCapitalize[j]){
         input = input.split(input[i]).join(toCapitalize[j].toUpperCase());
-        //input = input.replace(input[i], toCapitalize[j].toUpperCase());
       }
     }
   }
@@ -159,7 +151,7 @@ return sum;
 function givePotion8Answer(number){
   let boolean = true;
   if(number > 1){
-    for( let i = 2; i< number; i++){
+    for( let i = 2; i< number/2; i++){
       if(number % i == 0){
         boolean = false;
         break;
@@ -238,14 +230,11 @@ function hasMovedToTile(direction, tileToCheck) {
 let testTile = []; //[x,y]
 if( direction === "right"){
   testTile = [tileToCheck[0]+1,tileToCheck[1]];// pt dreapta x + 1 ---> y nu se modif.
-}
-else if( direction === "left"){
+}else if( direction === "left"){
   testTile = [tileToCheck[0]-1,tileToCheck[1]];
-}
-else if(direction === "up"){
+}else if(direction === "up"){
   testTile = [tileToCheck[0], tileToCheck[1]+1];
-}
-else if(direction === "down"){
+}else if(direction === "down"){
   testTile = [tileToCheck[0], tileToCheck[1]-1];
 }
 
@@ -254,7 +243,6 @@ for ( let i = 0; i < buffer.length ; i++){
     return true;
   }
 }
-//return false;
 }
 
 function level7Move(elementLeftOfPrince, elementRightOfPrince, elementUpOfPrince, elementDownOfPrince,simpleMovment = false){
@@ -263,11 +251,6 @@ if((elementLeftOfPrince === 11 || elementLeftOfPrince === 99) && !hasMovedToTile
 position[0] -=1;
 buffer.push([position[0],position[1]]);
 
-// if(simpleMovment === false){
-// return movment("left");}
-// else{
-// return "left"
-// }
 
 return simpleMovment ? "left" : move("left");
 }
@@ -297,7 +280,6 @@ function level8Move(gameMap){
   console.log(gameMap);
 }
 
-// DON'T MODIFY THE CODE BELOW THIS LINE
 
 let toExport;
 

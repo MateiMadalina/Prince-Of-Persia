@@ -1,9 +1,3 @@
-/*
-    ********************************
-    *PLEASE DO NOT MODIFY THIS FILE*
-    ********************************
-*/
-
 import { toExport as preData } from '/levels.js';
 import { postError, pImp } from '/public/jet.js';
 
@@ -97,7 +91,6 @@ function render(map) {
   const cells = document.querySelectorAll("#container > div");
   for (let i = 0; i < map.length; i++) {
     for (let j = 0; j < map[i].length; j++) {
-      //cells[i * map[0].length + j].innerHTML = getMapIconFor(map[i][j]);
       cells[i * map[0].length + j].className = getMapIconFor(map[i][j]);
     }
   }
@@ -191,7 +184,6 @@ function setPlayerCoordinates(map) {
 
 function loadLevel(number) {
   const loaderFunction = window[`loadLevel${number}`];
-  //console.log(loaderFunction);
   if (!loaderFunction) {
     const msg = `That level does not exist: ${number}`
     console.log(msg);
