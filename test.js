@@ -1,10 +1,3 @@
-/*
-    DO NOT MODIFY THIS FILE
-
-	This file is for testing purposes only.
-	Don't worry if you don't understand it yet, you can come back later and check it again.
-*/
-
 import { toExport as data } from './levels.js';
 
 
